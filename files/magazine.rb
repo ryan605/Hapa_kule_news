@@ -8,36 +8,21 @@ class Magazine
         @name=name
         @category=category
         @@all << self
+        @contributors=[]
     end
     
-    def get_name
-        @name
-    end
-
-    def set_name
-        @name=name
-    end
-
-    def get_category
-        @category
-    end
-
-    def set_category
-        @category = category
-    end
-
     def self.all
         @@all
+    end
+
+    def contributors(authors)
+        @contributors
     end
 
 end
 magazine = Magazine.new("Harry Potter","Fiction")
 puts magazine.name
 puts magazine.category
-magazine.set_name
-magazine.set_category
-puts magazine.set_name
-puts magazine.set_category
 
 Magazine.new("National Geographic", "Science and Nature")
 Magazine.new("Time", "Current Events")
