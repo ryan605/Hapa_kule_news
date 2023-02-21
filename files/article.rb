@@ -11,6 +11,8 @@ class Article
         @@all << self
     end
 
+    def self.all
+        @@all
+    end
 
 end
-author = Article.new("ryan")

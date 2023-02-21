@@ -15,15 +15,19 @@ class Author
     end
 
     def magazines
-        @articles.map{|magazine|magazine.name==name}.unique
+        @articles.map{|magazine|magazine.name==name}.uniq
     end
     
-    def add_articles(magazine,title)
+    def add_article(magazine,title)
         article=Article.new(self,magazine,title)
         @articles << article
-       #magazine.add_articles
+        magazine.add_contributors(self)
+    end
+
+    def topic_areas
+        magazines.map(&:category).uniq
     end
 
 end
-author = Author.new("Jane Austen")
-puts author.name
+
+#puts author.name

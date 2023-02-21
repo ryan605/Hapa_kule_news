@@ -1,0 +1,14 @@
+require_relative '../config/environment'
+
+author1= Author.new("Ryan Langat")
+puts author1.name
+
+magazine1 = Magazine.new("Harry Potter","Fiction")
+puts magazine1.name
+
+
+article1 = author1.add_article(magazine1,"wielk")
+
+puts author1.get_articles.inspect
+
+
